@@ -34,8 +34,15 @@ class _HomeViewState extends ConsumerState<HomeView> {
             (context, index) {
               return Column(
                 children: [
-                  MoviesSlideshow(movies: []),
-                  Text('data'),
+                  MoviesSlideshow(movies: nowPlayingMovies),
+                  
+                  SizedBox(height: 5,),
+                  
+                  MovieHorizontalListview(
+                    movies: nowPlayingMovies,
+                    title: 'En cines',
+                    subTitle: 'A partir de',
+                  ),
                 ],
               );
             },
