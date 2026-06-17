@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gfcg_movies_app/config/theme/app_theme.dart';
-import 'package:gfcg_movies_app/presentation/screens/movies/home_screen.dart';
+import 'package:gfcg_movies_app/config/config.dart';
 
 void main() async {
   
@@ -21,8 +20,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
     );
