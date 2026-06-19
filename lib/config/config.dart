@@ -1,3 +1,4 @@
 export 'package:gfcg_movies_app/config/constants/enviroment.dart';
-export 'package:gfcg_movies_app/config/theme/app_theme.dart';
+export 'package:gfcg_movies_app/config/helpers/human_formats.dart';
 export 'package:gfcg_movies_app/config/router/app_router.dart';
+export 'package:gfcg_movies_app/config/theme/app_theme.dart';
