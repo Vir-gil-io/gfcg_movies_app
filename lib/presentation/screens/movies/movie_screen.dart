@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gfcg_movies_app/config/config.dart';
 import 'package:gfcg_movies_app/domain/domain.dart';
 import 'package:gfcg_movies_app/presentation/providers/movies/movie_info_provider.dart';
+import 'package:gfcg_movies_app/presentation/widgets/widgets.dart';
 
 class MovieScreen extends ConsumerStatefulWidget {
   static const name = 'movie-screen';
@@ -68,10 +69,11 @@ class _MovieDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // TODO: Título, overview y rating
+        // Título, overview y rating
         _TitleAndOverview(movie: movie),
 
         // TODO: Géneros de la película
+        MovieGenres(movie: movie),
 
         //TODO: Actores de la película
 
@@ -120,6 +122,12 @@ class _TitleAndOverview extends StatelessWidget {
                 movie.overview.isNotEmpty 
                 ? movie.overview
                 : 'Sin Información'
+                ),
+
+                SizedBox(height: 10,),
+
+                MovieRating(
+                  voteAverage: movie.voteAverage
                 ),
 
                 Row(
