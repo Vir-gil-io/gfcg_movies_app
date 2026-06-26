@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gfcg_movies_app/config/config.dart';
 import 'package:gfcg_movies_app/domain/domain.dart';
 import 'package:gfcg_movies_app/presentation/providers/movies/movie_info_provider.dart';
+import 'package:gfcg_movies_app/presentation/providers/providers.dart';
 import 'package:gfcg_movies_app/presentation/widgets/widgets.dart';
 
 class MovieScreen extends ConsumerStatefulWidget {
@@ -27,6 +28,7 @@ class _MovieScreenState extends ConsumerState<MovieScreen> {
     super.initState();
     
     ref.read(movieInfoProvider.notifier).loadMovie(widget.movieId);
+    ref.read(actorsByMovieProvider.notifier).loadActors(widget.movieId);
   }
 
   @override
@@ -72,10 +74,11 @@ class _MovieDetails extends StatelessWidget {
         // Título, overview y rating
         _TitleAndOverview(movie: movie),
 
-        // TODO: Géneros de la película
+        // Géneros de la película
         MovieGenres(movie: movie),
 
         //TODO: Actores de la película
+        ActorsByMovie(movieId: movie.id.toString()),
 
         //TODO: Tráilers de la película
 
@@ -98,7 +101,7 @@ class _TitleAndOverview extends StatelessWidget {
     final textStyle = Theme.of(context).textTheme;
 
     return Padding(
-      padding: EdgeInsetsGeometry.symmetric(horizontal: 8, vertical: 15),
+      padding: EdgeInsetsGeometry.symmetric(horizontal: 8,),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

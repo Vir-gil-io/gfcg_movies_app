@@ -14,6 +14,12 @@ class MovieRepositoryImpl extends MoviesRepository {
   }
 
   @override
+  Future<List<Actor>> getActorsByMovie(String movieId) {
+    //TODO: implement getActorsByMovie
+    throw UnimplementedError();
+  }
+
+  @override
   Future<List<Movie>> getPopular({int page = 1}) {
     return datasource.getPopular(page: page);
   }
@@ -42,5 +48,6 @@ class MovieRepositoryImpl extends MoviesRepository {
   Future<List<Movie>> searchMovie(String query) {
     return datasource.searchMovie(query);
   }
+
   
 }
