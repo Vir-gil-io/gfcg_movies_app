@@ -15,8 +15,7 @@ class MovieRepositoryImpl extends MoviesRepository {
 
   @override
   Future<List<Actor>> getActorsByMovie(String movieId) {
-    //TODO: implement getActorsByMovie
-    throw UnimplementedError();
+    return datasource.getActorsByMovie(movieId);
   }
 
   @override
