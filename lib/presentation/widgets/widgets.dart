@@ -4,3 +4,4 @@ export 'package:gfcg_movies_app/presentation/widgets/movies/movie_horizontal_lis
 export 'package:gfcg_movies_app/presentation/widgets/movies/movie_rating.dart';
 export 'package:gfcg_movies_app/presentation/widgets/movies/movies_slideshow.dart';
 export 'package:gfcg_movies_app/presentation/widgets/shared/custom_appbar.dart';
+export 'package:gfcg_movies_app/presentation/widgets/movies/videos_from_movie.dart';
