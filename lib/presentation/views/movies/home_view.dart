@@ -10,7 +10,7 @@ class HomeView extends ConsumerStatefulWidget {
   ConsumerState<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends ConsumerState<HomeView> {
+class _HomeViewState extends ConsumerState<HomeView> with AutomaticKeepAliveClientMixin { //Mantiene el estado de la pantalla aunque se cambie de vista
   @override
   void initState() {
     super.initState();
@@ -19,6 +19,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); // Mantiene el estado de la pantalla aunque se cambie de vista
     final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
     return CustomScrollView(
       slivers: [
@@ -53,4 +54,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
       ],
     );
   }
+  
+  @override
+  bool get wantKeepAlive => true;
 }
